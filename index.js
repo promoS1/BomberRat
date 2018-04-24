@@ -19,6 +19,10 @@ var req_commencer = require("./req_commencer.js");
 var req_afficher_formulaire_inscription = require("./req_afficher_formulaire_inscription.js");
 var req_inscrire = require("./req_inscrire.js");
 var req_identifier = require("./req_identifier.js");
+var req_facile = require("./req_facile.js");
+var req_inter = require("./req_inter.js");
+var req_hard = require("./req_hard.js");
+var req_regle = require("./req_regle.js");
 
 var req_erreur = require("./req_erreur.js");
 
@@ -54,6 +58,18 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_identifier':
 				req_identifier(req, res, query);
+				break;
+			case '/req_facile':
+				req_facile(req, res, query);
+				break;
+			case '/req_inter':
+				req_inter(req, res, query);
+				break;
+			case '/req_hard':
+				req_hard(req, res, query);
+				break;
+			case '/req_regle':
+				req_regle(req, res, query);
 				break;
 			default:
 				break;

@@ -10,7 +10,7 @@ var trait = function (req, res, query) {
 
 	// AFFICHAGE LES REGLES
 
-	page = fs.readFileSync('aff_regle.html', 'utf-8');
+	page = fs.readFileSync('aff_regles.html', 'utf-8');
 
 	marqueurs = {};
 	marqueurs.erreur = "";
