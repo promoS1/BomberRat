@@ -23,7 +23,7 @@ var req_facile = require("./req_facile.js");
 var req_inter = require("./req_inter.js");
 var req_hard = require("./req_hard.js");
 var req_regle = require("./req_regle.js");
-
+var req_deco = require("./req_deco.js");
 var req_erreur = require("./req_erreur.js");
 
 //-------------------------------------------------------------------------
@@ -70,6 +70,9 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_regle':
 				req_regle(req, res, query);
+				break;
+			case '/req_deco':
+				req_deco(req, res, query);
 				break;
 			default:
 				break;
