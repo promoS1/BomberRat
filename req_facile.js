@@ -9,10 +9,16 @@ var trait = function (req, res, query) {
 	var page;
 
 	// AFFICHAGE NIVEAU FACILE
-
 	page = fs.readFileSync('level_facile.html', 'utf-8');
-
 	marqueurs = {};
+//FOR MARQUEURS
+//marqueurs.lanu = "bigzeolkz";
+	//for(x=0;x<10;x++) { 
+	//  for(y=0;y<10;y++) {
+	//      process.stdout.write("# ");
+	//  }           
+	//  console.log(" ");
+	//}
 	marqueurs.erreur = "";
 	marqueurs.pseudo = "";
 	page = page.supplant(marqueurs);
