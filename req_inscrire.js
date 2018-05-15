@@ -10,16 +10,21 @@ var fs = require("fs");
 require('remedial');
 
 var trait = function (req, res, query) {
+	
 
 	var marqueurs;
 	var pseudo;
 	var password;
+	var password2;
 	var page;
 	var nouveauMembre;
 	var contenu_fichier;
 	var listeMembres;
 	var i;
 	var trouve;
+	var mdp;
+	var pseudo_valide;
+	var mdp_valide;
 
 	// ON LIT LES COMPTES EXISTANTS
 
@@ -37,9 +42,32 @@ var trait = function (req, res, query) {
 		i++;
 	}
 
+	//VERIFICATION MOT DE PASSE 
+		if(query.password === query.password2){
+			mdp = "identique"
+		} else {
+			mdp = "different"
+		}
+		
+	// VERICATION DES CHAMPS SI ILS SONT VIDE OU PAS 
+	if (query.pseudo.legth > 0) {
+		pseudo_valide = "oui"
+	} else {
+		pseudo_valide = "non"
+	}
+	if (query.password.legth > 0) {
+		mdp_valide = "oui"
+	} else { 
+		mdp_valide = "non"
+	}
+
+
+		
+
 	// SI PAS TROUVE, ON AJOUTE LE NOUVEAU COMPTE DANS LA LISTE DES COMPTES
 
-	if(trouve === false) {
+	if(trouve === false && mdp === "identique" && pseudo_valide ===  "oui"
+	&& mdp_valide === "oui") {
 		nouveauMembre = {};
 		nouveauMembre.pseudo = query.pseudo;
 		nouveauMembre.password = query.password;
@@ -53,17 +81,27 @@ var trait = function (req, res, query) {
 
 	// ON RENVOIT UNE PAGE HTML 
 
-	if(trouve === true) {
-		// SI CREATION PAS OK, ON REAFFICHE PAGE FORMULAIRE AVEC ERREUR
+	if(trouve === true || mdp === "different" || pseudo_valide === "non" ||
+	mdp_valide === "non") {
+		// SI CREATION PAS OK, ON REAFFICHE PAGE FORMULAIRE AVEC ERREUR MDP DIFERENTS
 
 		page = fs.readFileSync('modele_formulaire_inscription.html', 'utf-8');
 
 		marqueurs = {};
+		if (trouve === true){
 		marqueurs.erreur = "ERREUR : ce compte existe déjà";
+		}else if (mdp === "different"){
+		marqueurs.erreur = "EERREUR : les mots de passe ne sont pas identique";
+		}else if (pseudo_valide === "non") {
+		marqueurs.erreur = "ERREUR : le champ pseudo est vide";
+		}else if (mdp_valide === "non") {
+		marqueurs.erreur = "ERREUR : le champ mot de pass est vide";
+		}
 		marqueurs.pseudo = query.pseudo;
 		page = page.supplant(marqueurs);
 
 	} else {
+		
 		// SI CREATION OK, ON ENVOIE PAGE DE CONFIRMATION
 
 		page = fs.readFileSync('modele_confirmation_inscription.html', 'UTF-8');
