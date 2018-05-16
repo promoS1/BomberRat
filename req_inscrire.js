@@ -50,12 +50,12 @@ var trait = function (req, res, query) {
 		}
 		
 	// VERICATION DES CHAMPS SI ILS SONT VIDE OU PAS 
-	if (query.pseudo.legth > 0) {
+	if (query.pseudo.length > 0) {
 		pseudo_valide = "oui"
 	} else {
 		pseudo_valide = "non"
 	}
-	if (query.password.legth > 0) {
+	if (query.password.length > 0) {
 		mdp_valide = "oui"
 	} else { 
 		mdp_valide = "non"
