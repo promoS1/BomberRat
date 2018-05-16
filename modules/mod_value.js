@@ -11,7 +11,7 @@ var mod_value = function(nb_lig, nb_col) {
 	var l;
 	var c;
 
-	repJSON = fs.readFileSync("grille_json.json" , "UTF-8");
+	repJSON = fs.readFileSync("./modules/grille.json", "UTF-8");
 	grille = JSON.parse(repJSON);
 
 
@@ -31,7 +31,7 @@ var mod_value = function(nb_lig, nb_col) {
 		}
 	}
 	repJSON = JSON.stringify(grille);
-	fs.writeFileSync("grille_json.json" , repJSON , "utf-8");
+	fs.writeFileSync("./modules/grille.json", repJSON, "UTF-8");
 }
 
 module.exports = mod_value;
