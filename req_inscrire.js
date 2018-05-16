@@ -91,7 +91,7 @@ var trait = function (req, res, query) {
 		if (trouve === true){
 		marqueurs.erreur = "ERREUR : ce compte existe déjà";
 		}else if (mdp === "different"){
-		marqueurs.erreur = "EERREUR : les mots de passe ne sont pas identique";
+		marqueurs.erreur = "ERREUR : les mots de passe ne sont pas identique";
 		}else if (pseudo_valide === "non") {
 		marqueurs.erreur = "ERREUR : le champ pseudo est vide";
 		}else if (mdp_valide === "non") {
