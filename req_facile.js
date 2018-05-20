@@ -28,7 +28,7 @@ var trait = function (req, res, query) {
 			marqueur.lagrille += "<a href='http://localhost:5000/req_facile?bouton=facile&pseudo=" + query.pseudo + "&l=" + (x+1) + "&c=" + (y+1) + "'><img src='./images/carre.png'></a>\n";
 
 		}
-		marqueur.lagrille += "<br>"
+		marqueur.lagrille += "<br>\n"
 	}
 	page = page.supplant(marqueur);
 
