@@ -26,7 +26,7 @@ var req_regle = require("./req_regle.js");
 var req_deco = require("./req_deco.js");
 var req_erreur = require("./req_erreur.js");
 var req_statique = require("./req_statique.js");
-
+var req_jeu = require("./req_jeufacile.js");
 //-------------------------------------------------------------------------
 // FONCTION DE CALLBACK APPELLEE POUR CHAQUE REQUETE
 //-------------------------------------------------------------------------
@@ -73,6 +73,9 @@ var traite_requete = function (req, res) {
 				req_regle(req, res, query);
 				break;
 			case '/req_deco':
+				req_deco(req, res, query);
+				break;
+			case '/req_jeufacile':
 				req_deco(req, res, query);
 				break;
 			default:
