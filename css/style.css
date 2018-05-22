@@ -1,0 +1,22 @@
+
+
+#h1, #connexion{
+	margin-top:-40px;
+float:right;
+width:165px;
+height:100%;
+padding:25px;
+		margin-left:740px;
+}
+#header{
+height:100%;
+width:62,5%;
+	  margin-left : 14%;
+	  margin-top : 3%;
+font:18px arial;
+overflow:hidden;
+}
+#header ,#connexion {
+ margin-left : 5%
+}
+
