@@ -76,7 +76,7 @@ var traite_requete = function (req, res) {
 				req_deco(req, res, query);
 				break;
 			case '/req_jeufacile':
-				req_deco(req, res, query);
+				req_jeu(req, res, query);
 				break;
 			default:
 				req_statique(req, res, pathname);

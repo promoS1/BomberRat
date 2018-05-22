@@ -29,7 +29,7 @@ var trait = function (req, res, query) {
 	marqueur.lagrille = "";
 	for (x = 0;x < 8; x++) {
 		for (y = 0; y < 8; y++) {
-			marqueur.lagrille += "<a href='http://localhost:5000/req_jeufacile?bouton=facile&pseudo=" + query.pseudo + "&l=" + (x+1) + "&c=" + (y+1) + "'><img src='./images/carre.png'></a>\n";
+			marqueur.lagrille += "<a href='http://localhost:5000/req_jeufacile?bouton=facile&pseudo=" + query.pseudo + "&l=" + (x) + "&c=" + (y) + "'><img src='./images/carre.png'></a>\n";
 
 		}
 		marqueur.lagrille += "<br>\n"
