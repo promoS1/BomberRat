@@ -13,6 +13,10 @@ var trait = function (req, res, query) {
 	var vnb;
 	var x;
 	var y;
+	var click = require("./modules/mod_click.js");
+
+	query.c = Number(query.c);
+	query.l = Number(query.l);
 
 	repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
 	grille = JSON.parse(repJSON);
@@ -26,16 +30,16 @@ var trait = function (req, res, query) {
 	}
 
 	if(grille[query.l][query.c].show === true && grille[query.l][query.c].v === 0) {
-		//montrer les cases autours
+		click(grille, query.l, query.c);
 	}
 
 
 	repJSON = JSON.stringify(grille);
 	fs.writeFileSync("./modules/grille_" + query.pseudo + ".json", repJSON, "UTF-8");
 
-	// AFFICHAGE DE LA PAGE DU JEU AVEC CHANGEMENT AU NIVEAU FACIKLE
-	repJSON= fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
-	grille = JSON.parse(repJSON);
+	// AFFICHAGE DE LA PAGE DU JEU AVEC CHANGEMENT AU NIVEAU FACILE
+	//repJSON= fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
+	//grille = JSON.parse(repJSON);
 
 
 	page = fs.readFileSync('./level_facile.html', 'utf-8');
