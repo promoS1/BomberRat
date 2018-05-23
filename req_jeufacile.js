@@ -25,7 +25,7 @@ var trait = function (req, res, query) {
 		grille[query.l][query.c].show = true;	
 	}
 
-	if(grille[query.l][query.c].show === true && grille[query.l][query.c].v === "0") {
+	if(grille[query.l][query.c].show === true && grille[query.l][query.c].v === 0) {
 		//montrer les cases autours
 	}
 
@@ -56,7 +56,7 @@ var trait = function (req, res, query) {
 
 				
 				} else {
-					marqueur.lagrille += "<img src='./images/v" + grille[x][y].v + ".png'>";
+					marqueur.lagrille += "<img src='./images/vv" + grille[x][y].v + ".png'>\n";
 				}
 			}
 		}
