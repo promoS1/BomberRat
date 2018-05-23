@@ -1,4 +1,4 @@
-//MODULE POUR LE PI VALUE
+//FONCTION POUR LE PI VALUE
 
 "use strict";
 
