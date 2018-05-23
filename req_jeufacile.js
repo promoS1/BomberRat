@@ -14,25 +14,23 @@ var trait = function (req, res, query) {
 	var x;
 	var y;
 	var click = require("./modules/mod_click.js");
+	var resultat;
 
 	query.c = Number(query.c);
 	query.l = Number(query.l);
 
 	repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
 	grille = JSON.parse(repJSON);
+	resultat = click(grille, query.l, query.c);
+
 	// faire les mods ici
 	if (grille[query.l][query.c].b === true){
 		//fin de la partie
 	} else if (grille[query.l][query.c].d === true){
 		grille[query.l][query.c].d = false;
 	} else if (grille[query.l][query.c].show === false) {
-		grille[query.l][query.c].show = true;	
-	}
-
-	if(grille[query.l][query.c].show === true && grille[query.l][query.c].v === 0) {
 		click(grille, query.l, query.c);
 	}
-
 
 	repJSON = JSON.stringify(grille);
 	fs.writeFileSync("./modules/grille_" + query.pseudo + ".json", repJSON, "UTF-8");

@@ -10,10 +10,12 @@ var mod_grille = function(nb_lig, nb_col, bratio) {
 	var c;
 	var p;
 	var bratio; //ratio de bombe
+	var bcompt;
 
 	repJSON = fs.readFileSync("./modules/grille.json", "UTF-8");
 
 	grille = JSON.parse(repJSON);
+	bcompt = 0;
 	for(l=0; l<nb_lig; l++) {
 		grille[l] = [];
 		for(c=0; c<nb_col; c++) {
@@ -21,6 +23,7 @@ var mod_grille = function(nb_lig, nb_col, bratio) {
 			p = Math.floor(Math.random() * bratio);
 			if(p === 0) {
 				grille[l][c].b = true;
+				bcompt++;
 			} else {
 				grille[l][c].b = false;
 			}
@@ -29,6 +32,7 @@ var mod_grille = function(nb_lig, nb_col, bratio) {
 
 	repJSON = JSON.stringify(grille);
 	fs.writeFileSync("./modules/grille.json", repJSON, "UTF-8");
+	return bcompt;
 }
 
 module.exports = mod_grille;
