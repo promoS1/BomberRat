@@ -27,6 +27,8 @@ var req_deco = require("./req_deco.js");
 var req_erreur = require("./req_erreur.js");
 var req_statique = require("./req_statique.js");
 var req_jeu = require("./req_jeufacile.js");
+var req_perdu = require("./req_perdu.js");
+
 //-------------------------------------------------------------------------
 // FONCTION DE CALLBACK APPELLEE POUR CHAQUE REQUETE
 //-------------------------------------------------------------------------
@@ -77,6 +79,9 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_jeufacile':
 				req_jeu(req, res, query);
+				break;
+			case '/req_perdu': 
+				req_perdu(req, res query);
 				break;
 			default:
 				req_statique(req, res, pathname);
