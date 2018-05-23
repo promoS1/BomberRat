@@ -1,12 +1,16 @@
 
-
-#h1, #connexion{
+body {
+	background-image: url("fond.jpg");
+	background-size:cover;
+}
+#connexion{
 	margin-top:-40px;
 float:right;
 width:165px;
 height:100%;
 padding:25px;
 		margin-left:740px;
+		font-family : Rata Negra;		
 }
 #header{
 height:100%;
@@ -17,6 +21,17 @@ font:18px arial;
 overflow:hidden;
 }
 #header ,#connexion {
- margin-left : 5%
+	margin-left : 5%
+} @font-face {
+
+	font-family: 'Adventure';
+
+src: url('Adventure_Hollow.otf');
+
+}
+h2 { 
+	font-family:'Adventure';
+	color : #4C9B91 ;
+	font-size : 100px;
 }
 

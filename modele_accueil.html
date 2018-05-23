@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="./css/style.css" />
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 <link rel="icon" type="image/png" href="favicon.png"/>
 </head>
 
-<h2>Mon PI</h2>
+<h2>BOMBER RAT</h2>
 
 
 {erreur}
 
-<p/>
+		<p/>
+	<body>
+	<div id = "header"> 
+	 <div id="connexion"><br>
+		<form action="/req_identifier" method="GET"> 
+    	<input type="text" name="pseudo" value="{pseudo}"> 
+    	<br/>
+    	<input type="password" name="password" value="">
+    	<br/>
+    	<input type="submit" name="action" value="Se connecter">
+		</form>
 
-<form action="/req_identifier" method="GET"> 
-    <input type="text" name="pseudo" value="{pseudo}"> 
-    <br/>
-    <input type="password" name="password" value="">
-    <br/>
-    <input type="submit" name="action" value="Se connecter">
-</form>
 
 <p/>
 
 <form action="/req_afficher_formulaire_inscription" method="GET">
     <button name="action" value="creer">Créer compte</button>
 </form>
-
+</div>
+</div>
+</div>
 </html>
