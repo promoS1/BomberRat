@@ -11,7 +11,8 @@ var mod_grille = function(nb_lig, nb_col, bratio) {
 	var p;
 	var bratio; //ratio de bombe
 	var bcompt;
-
+	
+	fs.writeFileSync("./modules"+ query.pseudo+ ".json",repJSON, "UTF-8");
 	repJSON = fs.readFileSync("./modules/grille.json", "UTF-8");
 
 	grille = JSON.parse(repJSON);
@@ -31,7 +32,6 @@ var mod_grille = function(nb_lig, nb_col, bratio) {
 	}
 
 	repJSON = JSON.stringify(grille);
-	fs.writeFileSync("./modules/grille.json", repJSON, "UTF-8");
 	return bcompt;
 }
 
