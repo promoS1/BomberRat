@@ -31,7 +31,11 @@ src: url('Adventure_Hollow.otf');
 }
 h2 { 
 	font-family:'Adventure';
-	color : #4C9B91 ;
+	color : #6BA440 ;
 	font-size : 100px;
 }
-
+#regle 
+	{
+	height: -60px;
+	    margin-top: 60px;
+}
