@@ -14,13 +14,19 @@ var trait = function (req, res, query) {
 	var x;
 	var y;
 	var click = require("./modules/mod_click.js");
-	
-	query.c = Number(query.c);
-	query.l = Number(query.l);
+	var posi = require("./modules/mod_pos.js");
+	var pos;
+
+	pos = posi(query);
+	console.log(pos);
+	console.log(pos.l);
+
+	//query.c = Number(query.c);
+	//query.l = Number(query.l);
 
 	repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
 	grille = JSON.parse(repJSON);
-	click(grille, query.l, query.c);
+	click(grille, pos.l, pos.c);
 
 	// faire les mods ici
 	//} else if (grille.cells[query.l][query.c].show === false) {
@@ -44,14 +50,13 @@ var trait = function (req, res, query) {
 	for (x = 0;x < 8; x++) {
 		for (y = 0; y < 8; y++) {
 			if (grille.cells[x][y].show === false) {
-				marqueur.lagrille += "<a href='http://localhost:5000/req_jeufacile?bouton=facile&pseudo=" + query.pseudo + "&l=" + (x) + "&c=" + (y) + "'><img src='./images/carre.png'></a>\n";
+				marqueur.lagrille += "<input type='image' src='./images/carre.png' name= 'case." + x + "." + y + "' >\n";
 
 			} else {
 
 				if(grille.cells[x][y].d === true) {
-					marqueur.lagrille += "<a href='http://localhost:5000/req_jeufacile?bouton=facile&pseudo=" + query.pseudo + "&l=" + (x) + "&c=" + (y) + "'><img src='./images/flag.png'></a>\n";
+					marqueur.lagrille += "<input type='image' src='./images/flag.png' name= 'case." + x + "." + y + "' >\n";
 
-				
 				} else {
 					marqueur.lagrille += "<img src='./images/vv" + grille.cells[x][y].v + ".png'>\n";
 				}

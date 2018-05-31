@@ -2,12 +2,12 @@
 
 "use strict"
 
-mod_pos = function (query) {
+var mod_pos = function (query) {
 	var listeProp;
 	var position;
 	var pos;
 
-	listeProp = Object.getOwnPropertyNames(requete.query);
+	listeProp = Object.getOwnPropertyNames(query);
 	
 	position = listeProp.find(function(element) {
 		return element.match(/case.*/);
@@ -15,9 +15,11 @@ mod_pos = function (query) {
 	
 	position = position.split (".");
 	pos = {};
-	pos.l = position[1];
-	pos.c = position[2];
+	pos.l = Number(position[1]);
+	pos.c = Number(position[2]);
 
 	return pos;
 	
 }
+
+module.exports = mod_pos;

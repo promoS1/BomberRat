@@ -1,18 +1,21 @@
 <!DOCTYPE=html>
 
 <html>
+
 <head>
 <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
 <form action="req_retour" method="GET">
 <input type="submit" name="bouton" value="retour">
 <input type="hidden" name="pseudo" value="{pseudo}">
 </form>
-</head>
-<body>
-<form><input type="hidden" name="pseudo" value="{pseudo}">
-</form>
 <div id="marge">
+<form action ="req_jeufacile" method = "GET">
+<input type="hidden" name="pseudo" value="{pseudo}">
 {lagrille}
+</form>
 </div>
 </body>
 </html>

@@ -15,7 +15,7 @@ var trait = function (req, res, query) {
 	var repJSON;
 
 
-	mod_grille(8,8,10, query.pseudo);
+	mod_grille(8,8,6, query.pseudo);
 	mod_value(8,8, query.pseudo);
 
 
@@ -27,7 +27,7 @@ var trait = function (req, res, query) {
 	marqueur.lagrille = "";
 	for (x = 0;x < 8; x++) {
 		for (y = 0; y < 8; y++) {
-			marqueur.lagrille += "<a href='http://localhost:5000/req_jeufacile?pseudo=" + query.pseudo + "&l=" + (x) + "&c=" + (y) + "'><img src='./images/carre.png'></a>\n";
+			marqueur.lagrille += "<input type='image' src='./images/carre.png' name= 'case." + x + "." + y + "' >\n";
 
 		}
 		marqueur.lagrille += "<br>\n"

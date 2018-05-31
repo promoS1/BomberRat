@@ -1,20 +1,18 @@
 // FONCTION pour affichage des cases blanches
 
 "use strict";
-var fs = require("fs");
-var repJSON;
-var grille;
-// var click;
 
 function click(grille, l, c) {
 	const areValidCoordinates = l >= 0 && l <= 7 && c >= 0 && c <= 7;
 	if (!areValidCoordinates) {return; }
 	
+	console.log("=====> " ,l, c);
 	if (grille.cells[l][c].d === true){
 		grille.cells[l][c].d = false;
 	
 	} else if (grille.cells[l][c].b === true){
 		//fin de la partie
+		console.log("hello");
 		//afficher la page html de la défaite
 	} else if (grille.cells[l][c].show === false) {
 		grille.cells[l][c].show = true;

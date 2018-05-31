@@ -26,7 +26,7 @@ var req_regle = require("./req_regle.js");
 var req_deco = require("./req_deco.js");
 var req_erreur = require("./req_erreur.js");
 var req_statique = require("./req_statique.js");
-var req_jeu = require("./req_jeufacile.js");
+var req_jeufacile = require("./req_jeufacile.js");
 var req_retour = require("./req_retour.js");
 var req_perdu = require("./req_perdu.js");
 
@@ -82,7 +82,7 @@ var traite_requete = function (req, res) {
 				req_deco(req, res, query);
 				break;
 			case '/req_jeufacile':
-				req_jeu(req, res, query);
+				req_jeufacile(req, res, query);
 				break;
 			case '/req_perdu': 
 				req_perdu(req, res, query);
