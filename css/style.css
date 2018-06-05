@@ -31,15 +31,50 @@ src: url('Adventure_Hollow.otf');
 }
 h2 { 
 	font-family:'Adventure';
-	color : #6BA440 ;
-	font-size : 100px;
+color : #6BA440 ;
+		font-size : 100px;
+}
+@font-face {
+font-family: 'secret';
+src: url("_TOP_SECRET_.otf");
+}#acc { 
+font-family:'secret';
+font-size: 100px;
+
 }
 #regle 
-	{
-	height: -60px;
+{
+height: -60px;
 		margin-top: -100px;
 }
 #titre
-	{
+{
 	margin-top: -50px;
+} 
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	background-color:transparent;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+border:1px solid #3866a3;
+display:inline-block;
+cursor:pointer;
+color:#14396a;
+	  font-family:Arial;
+	  font-size:15px;
+	  font-weight:bold;
+padding:6px 24px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #7cacde;
 }
+.myButton:hover {
+	background-color:transparent;
+}
+.myButton:active {
+position:relative;
+top:1px;
+}
+
