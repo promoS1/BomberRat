@@ -1,27 +1,13 @@
 
 body {
 	background-image: url("fond.jpg");
-	background-size:cover;
+	background-size:cover;		
 }
-#connexion{
-	margin-top:-40px;
-float:right;
-width:165px;
-height:100%;
-padding:25px;
-		margin-left:740px;
-		font-family : Rata Negra;		
-}
-#header{
-height:100%;
-width:62,5%;
-	  margin-left : 14%;
-	  margin-top : 3%;
-font:18px arial;
-overflow:hidden;
-}
-#header ,#connexion {
-	margin-left : 5%
+.hua {
+	 margin-top: -100;
+width:100px;
+height:100px;
+
 } @font-face {
 
 	font-family: 'Adventure';
