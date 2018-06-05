@@ -16,57 +16,26 @@ var trait = function (req, res, query) {
 	var click = require("./modules/mod_click.js");
 	var posi = require("./modules/mod_pos.js");
 	var pos;
+	var fun_aff = require("./modules/fun_aff.js");
 
 	pos = posi(query);
 	console.log(pos);
 	console.log(pos.l);
 
-	//query.c = Number(query.c);
-	//query.l = Number(query.l);
-
 	repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
 	grille = JSON.parse(repJSON);
 	click(grille, pos.l, pos.c);
-
-	// faire les mods ici
-	//} else if (grille.cells[query.l][query.c].show === false) {
-	//	click(grille, query.l, query.c);
-	//}
 
 	repJSON = JSON.stringify(grille);
 	fs.writeFileSync("./modules/grille_" + query.pseudo + ".json", repJSON, "UTF-8");
 
 	// AFFICHAGE DE LA PAGE DU JEU AVEC CHANGEMENT AU NIVEAU FACILE
-	//repJSON= fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
-	//grille = JSON.parse(repJSON);
-
 
 	page = fs.readFileSync('./level_facile.html', 'utf-8');
-
-	marqueur = {};
-	marqueur.erreur = "";
-	marqueur.pseudo = query.pseudo;
-	marqueur.lagrille = "";
-	for (x = 0;x < 8; x++) {
-		for (y = 0; y < 8; y++) {
-			if (grille.cells[x][y].show === false) {
-				marqueur.lagrille += "<input type='image' src='./images/carre.png' name= 'case." + x + "." + y + "' >\n";
-
-			} else {
-
-				if(grille.cells[x][y].d === true) {
-					marqueur.lagrille += "<input type='image' src='./images/flag.png' name= 'case." + x + "." + y + "' >\n";
-
-				} else {
-					marqueur.lagrille += "<img src='./images/vv" + grille.cells[x][y].v + ".png'>\n";
-				}
-			}
-		}
-		marqueur.lagrille += "<br>\n";
-	}
-
+	marqueur = fun_aff( query.pseudo, grille);
+	
 	page = page.supplant(marqueur);
-
+	
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	res.write(page);
 	res.end();
