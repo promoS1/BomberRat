@@ -14,6 +14,10 @@ height:100px;
 
 src: url('Adventure_Hollow.otf');
 
+} #barnabe {
+
+margin-left: auto;
+ margin-right: auto;
 }
 h2 { 
 	font-family:'Adventure';
