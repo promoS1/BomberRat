@@ -30,7 +30,6 @@ var fun_aff = function (pseudo, grille) {
 		marqueur.lagrille += "<br>\n";
 	}
 
-	//	page = page.supplant(marqueur);
 	return(marqueur);
 }
 

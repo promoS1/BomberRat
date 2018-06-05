@@ -6,7 +6,7 @@ function click(grille, l, c) {
 	const areValidCoordinates = l >= 0 && l <= 7 && c >= 0 && c <= 7;
 	if (!areValidCoordinates) {return; }
 	
-	console.log("=====> " ,l, c);
+//	console.log("=====> " ,l, c);
 	if (grille.cells[l][c].d === true){
 		grille.cells[l][c].d = false;
 	

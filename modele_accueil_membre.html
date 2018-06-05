@@ -11,9 +11,11 @@
 Bonjour <em>{pseudo}<em>
 </p>
 
-<a href="req_facile" class="myButton">Facile</a>
-<input type="hidden" name="pseudo" value="{pseudo}">
 
+<form action="req_facile" method="GET">
+<input type="submit" name="bouton" value="Facile">
+<input type="hidden" name="pseudo" value="{pseudo}">
+</form>
 
 <form action="req_inter" method="GET">
 <input type="submit" name="bouton" value="Intérmédiaire">

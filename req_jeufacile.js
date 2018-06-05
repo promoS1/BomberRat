@@ -18,13 +18,22 @@ var trait = function (req, res, query) {
 	var pos;
 	var fun_aff = require("./modules/fun_aff.js");
 
-	pos = posi(query);
-	console.log(pos);
-	console.log(pos.l);
+	if (query.act === "disc") {
+		pos = posi(query);
+	//	console.log(pos);
+	//	console.log(pos.l);
 
-	repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
-	grille = JSON.parse(repJSON);
-	click(grille, pos.l, pos.c);
+		repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
+		grille = JSON.parse(repJSON);
+		click(grille, pos.l, pos.c);
+	} else if (query.act === "flag") {
+		if (grille.cells[pos.l][pos.c].d === true) {
+			grille.cells[pos.l][pos.c].d === false
+		} else { 
+			grille.cells[pos.l][pos.c].d === true
+		}
+
+	}
 
 	repJSON = JSON.stringify(grille);
 	fs.writeFileSync("./modules/grille_" + query.pseudo + ".json", repJSON, "UTF-8");
