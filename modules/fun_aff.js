@@ -18,6 +18,9 @@ var fun_aff = function (pseudo, grille) {
 				marqueur.lagrille += "<input type='image' src='./images/flag.png' name= 'case." + x + "." + y + "' >\n";
 			} else if (grille.cells[x][y].show === false) {
 				marqueur.lagrille += "<input type='image' src='./images/carre.png' name= 'case." + x + "." + y + "' >\n";
+				
+			} else if (grille.cells[x][y].b === true) {
+				marqueur.lagrille += "<input type='image' src='./images/bombe.png' name= 'case." + x + "." + y + "' >\n";
 
 			} else {
 

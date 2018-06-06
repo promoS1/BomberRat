@@ -27,7 +27,7 @@ var trait = function (req, res, query) {
 
 	page = fs.readFileSync("./level_facile.html","UTF-8");
 	marqueur = fun_aff(query.pseudo,grille);
-
+	marqueur.lose = "";
 	page = page.supplant(marqueur);
 
 	res.writeHead(200, {'Content-Type': 'text/html'});
