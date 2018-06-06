@@ -2,6 +2,9 @@
 body {
 	background-image: url("fond.jpg");
 	background-size:cover;		
+} #mba {
+margin-top : -100;
+
 }
 .hua {
 	 margin-top: -100;
@@ -16,9 +19,9 @@ src: url('cannes.otf');
 
 } @font-face {
 
-	font-family : 'caviar';
+	font-family : 'visitor';
 
-	src: url('CaviarDreams.ttf')
+	src: url('visitor1.ttf')
 } #CI { 
 font-family:'caviar';
 color : #000000;
@@ -31,9 +34,9 @@ margin-left: auto;
  margin-right: auto;
 }
 h2 { 
-	font-family:'cannes';
-color : #596A9F ;
-		font-size : 80px;
+	font-family:'visitor';
+color : #000000 ;
+		font-size : 50px;
 }
 @font-face {
 font-family: 'secret';
@@ -78,4 +81,5 @@ padding:6px 24px;
 position:relative;
 top:1px;
 }
+							  
 

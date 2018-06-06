@@ -5,22 +5,28 @@
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 </head>
 
-<h2>Bienvenue sur BomberRat!</h2>
+<center>
+<img src="./images/logo.png"/>
+</center>
 
-<p/>
-Bonjour <em>{pseudo}<em>
-</p>
+<center>
+<div id="mba">
+<h2>Bienvenue sur BomberRat {pseudo}! </h2>
+</div>
+</center>
+
+
 
 <div id="mb2">
 <form action="req_facile" method="GET">
-<input type="submit" name="bouton" value="Facile">
 <input type="hidden" name="pseudo" value="{pseudo}">
+<button class ="myButton" name="boutons"><span> Facile</span></button>
 </form>
 </div>
 
 <form action="req_inter" method="GET">
-<input type="submit" name="bouton" value="Intérmédiaire">
 <input type="hidden" name="pseudo" value="{pseudo}">
+<button class="myButton" name="bouton" ><span>Intermédiaire</span></button>
 </form>
 
 <form action="req_hard" method="GET">
