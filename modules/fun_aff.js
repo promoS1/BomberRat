@@ -20,7 +20,7 @@ var fun_aff = function (pseudo, grille) {
 				marqueur.lagrille += "<input type='image' src='./images/carre.png' name= 'case." + x + "." + y + "' >\n";
 				
 			} else if (grille.cells[x][y].b === true) {
-				marqueur.lagrille += "<input type='image' src='./images/bombe.png' name= 'case." + x + "." + y + "' >\n";
+				marqueur.lagrille += "<img src='./images/bombe2.png'>\n";
 
 			} else {
 
