@@ -10,19 +10,30 @@ height:100px;
 
 } @font-face {
 
-	font-family: 'Adventure';
+	font-family: 'cannes';
 
-src: url('Adventure_Hollow.otf');
+src: url('cannes.otf');
 
-} #barnabe {
+} @font-face {
+
+	font-family : 'caviar';
+
+	src: url('CaviarDreams.ttf')
+} #CI { 
+font-family:'caviar';
+color : #000000;
+font-size: 40px;
+}
+
+#barnabe {
 
 margin-left: auto;
  margin-right: auto;
 }
 h2 { 
-	font-family:'Adventure';
-color : #6BA440 ;
-		font-size : 100px;
+	font-family:'cannes';
+color : #596A9F ;
+		font-size : 80px;
 }
 @font-face {
 font-family: 'secret';
