@@ -16,23 +16,23 @@ var fun_aff = function (pseudo, grille) {
 		for (y = 0; y < 8; y++) {
 			if(grille.cells[x][y].d === true) {
 				marqueur.lagrille += "<input type='image' src='./images/flag.png' name= 'case." + x + "." + y + "' >\n";
-				} else if (grille.cells[x][y].show === false) {
-					marqueur.lagrille += "<input type='image' src='./images/carre.png' name= 'case." + x + "." + y + "' >\n";
+			} else if (grille.cells[x][y].show === false) {
+				marqueur.lagrille += "<input type='image' src='./images/carre.png' name= 'case." + x + "." + y + "' >\n";
 
-				} else {
+			} else {
 
-					//if(grille.cells[x][y].d === true) {
-					//	marqueur.lagrille += "<input type='image' src='./images/flag.png' name= 'case." + x + "." + y + "' >\n";
+				//if(grille.cells[x][y].d === true) {
+				//	marqueur.lagrille += "<input type='image' src='./images/flag.png' name= 'case." + x + "." + y + "' >\n";
 
-					//} else {
-					marqueur.lagrille += "<img src='./images/vv" + grille.cells[x][y].v + ".png'>\n";
-					//}
-				}
+				//} else {
+				marqueur.lagrille += "<img src='./images/vv" + grille.cells[x][y].v + ".png'>\n";
+				//}
 			}
-			marqueur.lagrille += "<br>\n";
 		}
-
-		return(marqueur);
+		marqueur.lagrille += "<br>\n";
 	}
 
-	module.exports = fun_aff; 
+	return(marqueur);
+}
+
+module.exports = fun_aff; 

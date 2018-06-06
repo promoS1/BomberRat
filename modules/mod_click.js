@@ -2,16 +2,29 @@
 
 "use strict";
 
-function click(grille, l, c) {
-	const areValidCoordinates = l >= 0 && l <= 7 && c >= 0 && c <= 7;
+function click(grille, l, c, size) {
+	var lost;
+	var x;
+	var y;
+
+	const areValidCoordinates = l >= 0 && l <= (size - 1) && c >= 0 && c <= (size - 1);
 	if (!areValidCoordinates) {return; }
-	
+	lost = false;
+
 //	console.log("=====> " ,l, c);
 	if (grille.cells[l][c].d === true){
 		grille.cells[l][c].d = false;
 	
 	} else if (grille.cells[l][c].b === true){
 		//fin de la partie
+		lost = true;
+		
+		for(x=0; x < size; x++) {
+			for(y=0; y < size; y++) {
+				grille.cells[x][y].show = true;
+			}
+		}
+		
 		console.log("hello");
 		//afficher la page html de la défaite
 	} else if (grille.cells[l][c].show === false) {
@@ -35,6 +48,7 @@ function click(grille, l, c) {
 
 		}
 	}
+	return(lost);
 }
 
 module.exports = click;
