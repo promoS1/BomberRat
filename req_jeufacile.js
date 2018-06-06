@@ -18,19 +18,22 @@ var trait = function (req, res, query) {
 	var pos;
 	var fun_aff = require("./modules/fun_aff.js");
 
-	if (query.act === "disc") {
 		pos = posi(query);
 	//	console.log(pos);
 	//	console.log(pos.l);
 
 		repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
 		grille = JSON.parse(repJSON);
+
+	if (query.act === "disc") {
 		click(grille, pos.l, pos.c);
+
 	} else if (query.act === "flag") {
 		if (grille.cells[pos.l][pos.c].d === true) {
-			grille.cells[pos.l][pos.c].d === false
+			grille.cells[pos.l][pos.c].d = false;
 		} else { 
-			grille.cells[pos.l][pos.c].d === true
+			grille.cells[pos.l][pos.c].d = true;
+			console.log("drapo");
 		}
 
 	}
@@ -41,6 +44,7 @@ var trait = function (req, res, query) {
 	// AFFICHAGE DE LA PAGE DU JEU AVEC CHANGEMENT AU NIVEAU FACILE
 
 	page = fs.readFileSync('./level_facile.html', 'utf-8');
+
 	marqueur = fun_aff( query.pseudo, grille);
 	
 	page = page.supplant(marqueur);
