@@ -34,17 +34,18 @@ function click(grille, l, c, size) {
 		
 		// If cell value === 0
 		else if (grille.cells[l][c].v === 0) {
-			click(grille, l - 1, c - 1);
-			click(grille, l - 1, c );
-			click(grille, l - 1, c + 1);
+			console.log("===============0--------");
+			click(grille, l - 1, c - 1, size);
+			click(grille, l - 1, c, size );
+			click(grille, l - 1, c + 1, size);
 
-			click(grille, l , c - 1);
-			//click(grille, l , c); car case milieu
-			click(grille, l , c + 1);
+			click(grille, l , c - 1, size);
+			//click(grille, l , c, size); car case milieu
+			click(grille, l , c + 1, size);
 
-			click(grille, l +1 , c - 1);
-			click(grille, l +1 , c );
-			click(grille, l +1 , c + 1);
+			click(grille, l +1 , c - 1, size);
+			click(grille, l +1 , c , size);
+			click(grille, l +1 , c + 1, size);
 
 		}
 	}
