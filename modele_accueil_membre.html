@@ -5,28 +5,44 @@
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 </head>
 
-<h2>Bienvenue sur BomberRat!</h2>
-
-<p/>
-Bonjour <em>{pseudo}<em>
-</p>
-
-<div id="mb2">
-<form action="req_facile" method="GET">
-<input type="submit" name="bouton" value="Facile">
-<input type="hidden" name="pseudo" value="{pseudo}">
-</form>
+<center>
+<img src="./images/logo.png"/>
+</center>
+<center>
+<div class="mba">
+<h2>Bienvenue sur BomberRat {pseudo}! </h2>
 </div>
 
-<form action="req_inter" method="GET">
-<input type="submit" name="bouton" value="Intérmédiaire">
-<input type="hidden" name="pseudo" value="{pseudo}">
-</form>
 
-<form action="req_hard" method="GET">
-<input type="submit" name="bouton" value="HARDCORE">
+<div class="inline">
+<div id="mb2">
+<form action="req_facile" method="GET">
 <input type="hidden" name="pseudo" value="{pseudo}">
+<button class ="myButton" name="boutons"><span> Facile</span></button>
 </form>
+</div>
+</div>
+
+
+<div class="inline">
+<div id="mb2">
+<form action="req_inter" method="GET">
+<input type="hidden" name="pseudo" value="{pseudo}">
+<button class="myButton" name="bouton" ><span>Intermédiaire</span></button>
+</form>
+</div>
+</div>
+
+<div class="inline">
+<div id="mb2">
+<form action="req_hard" method="GET">
+<input type="hidden" name="pseudo" value="{pseudo}">
+<button class="myButton" name="bouton"><span>Hardcore</span></button>
+</form>
+</div>
+</div>
+
+</center>
 
 </br>
 

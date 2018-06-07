@@ -42,6 +42,7 @@ function click(grille, l, c, size) {
 		for(x=0; x < size; x++) {
 			for(y=0; y < size; y++) {
 				grille.cells[x][y].show = true;
+				grille.cells[x][y].d = false;
 			}
 		}
 		
