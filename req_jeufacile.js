@@ -18,7 +18,7 @@ var trait = function (req, res, query) {
 	var pos;
 	var fun_aff = require("./modules/fun_aff.js");
 	var lost;
-
+	var fun_cptb = require("./modules/fun_cptb.js");
 		pos = posi(query);
 	//	console.log(pos);
 	//	console.log(pos.l);
@@ -52,6 +52,7 @@ var trait = function (req, res, query) {
 	if(lost === true){
 		marqueur.lose = "Vous avez perdu!"
 	}
+	marqueur.cptb = fun_cptb(grille, 8);
 	page = page.supplant(marqueur);
 	
 	res.writeHead(200, {'Content-Type': 'text/html'});
