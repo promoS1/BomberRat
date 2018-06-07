@@ -18,7 +18,7 @@ var trait = function (req, res, query) {
 	var grille;
 	var fun_cptb = require("./modules/fun_cptb.js");
 
-	mod_grille(8,8,6, query.pseudo);
+	mod_grille(8,8,15, query.pseudo);
 	mod_value(8,8, query.pseudo);
 
 
@@ -29,6 +29,7 @@ var trait = function (req, res, query) {
 	page = fs.readFileSync("./level_facile.html","UTF-8");
 	marqueur = fun_aff(query.pseudo,grille);
 	marqueur.lose = "";
+	marqueur.win = "";
 	marqueur.cptb = fun_cptb(grille, 8);
 	page = page.supplant(marqueur);
 

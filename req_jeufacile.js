@@ -19,6 +19,8 @@ var trait = function (req, res, query) {
 	var fun_aff = require("./modules/fun_aff.js");
 	var lost;
 	var fun_cptb = require("./modules/fun_cptb.js");
+	var win = require("./modules/fun_gagner.js");	
+	var winner;	
 		pos = posi(query);
 	//	console.log(pos);
 	//	console.log(pos.l);
@@ -42,6 +44,8 @@ var trait = function (req, res, query) {
 
 	repJSON = JSON.stringify(grille);
 	fs.writeFileSync("./modules/grille_" + query.pseudo + ".json", repJSON, "UTF-8");
+	
+	winner = win(grille, 8);
 
 	// AFFICHAGE DE LA PAGE DU JEU AVEC CHANGEMENT AU NIVEAU FACILE
 
@@ -50,8 +54,14 @@ var trait = function (req, res, query) {
 	marqueur = fun_aff( query.pseudo, grille);
 	marqueur.lose = "";
 	if(lost === true){
-		marqueur.lose = "Vous avez perdu!"
+		marqueur.lose = "Vous avez perdu !";
 	}
+
+	marqueur.win = "";
+	if(win === true){
+		marqueur.win = "Vous avez survécu !";
+	}
+
 	marqueur.cptb = fun_cptb(grille, 8);
 	page = page.supplant(marqueur);
 	

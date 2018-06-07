@@ -6,25 +6,12 @@ function click(grille, l, c, size) {
 	var lost;
 	var x;
 	var y;
-	var compteur;
 
 	const areValidCoordinates = l >= 0 && l <= (size - 1) && c >= 0 && c <= (size - 1);
 	if (!areValidCoordinates) {return; }
 	lost = false;
-
-//	console.log("=====> " ,l, c);
-//	gagner
 	
-//	compteur = 0
-//
-//	for(x=0; x < size; x++) {
-//		for(y=0; y < size; y++) {
-//			if(grille.cells[l][c].b === false && grille.cells[l][c].show === true) {
-//				compteur++;
-//			}
-//		}
-//	}
-//	if(nb.l * nb.col - grille.nb.b) {		
+//	console.log("=====> " ,l, c);
 	
 	
 	
@@ -47,7 +34,9 @@ function click(grille, l, c, size) {
 		}
 		
 		console.log("hello");
-		//afficher la page html de la défaite
+	
+	// retourner une case
+
 	} else if (grille.cells[l][c].show === false) {
 		grille.cells[l][c].show = true;
 
