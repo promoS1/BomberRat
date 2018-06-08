@@ -58,8 +58,9 @@ var trait = function (req, res, query) {
 	}
 
 	marqueur.win = "";
-	if(win === true){
-		marqueur.win = "Vous avez survécu !";
+	if(winner === true){
+		//console.log("ggggggggggggggggggggggggggggggggggg");
+		marqueur.win = "Vous avez survécu ! <br/> <img src='./images/rat_paper.png'>";
 	}
 
 	marqueur.cptb = fun_cptb(grille, 8);

@@ -29,6 +29,7 @@ var win = function(grille, size){
 			}
 		}
 	}
+	console.log(gg);
 	return(gg);
 }
 module.exports = win;
