@@ -21,12 +21,12 @@ var trait = function (req, res, query) {
 	var fun_cptb = require("./modules/fun_cptb.js");
 	var win = require("./modules/fun_gagner.js");	
 	var winner;	
-		pos = posi(query);
+	pos = posi(query);
 	//	console.log(pos);
 	//	console.log(pos.l);
 
-		repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
-		grille = JSON.parse(repJSON);
+	repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
+	grille = JSON.parse(repJSON);
 
 	if (query.act === "disc") {
 		lost = click(grille, pos.l, pos.c, 8);
@@ -44,7 +44,7 @@ var trait = function (req, res, query) {
 
 	repJSON = JSON.stringify(grille);
 	fs.writeFileSync("./modules/grille_" + query.pseudo + ".json", repJSON, "UTF-8");
-	
+
 	winner = win(grille, 8);
 
 	// AFFICHAGE DE LA PAGE DU JEU AVEC CHANGEMENT AU NIVEAU FACILE
@@ -58,14 +58,15 @@ var trait = function (req, res, query) {
 	}
 
 	marqueur.win = "";
-	if(winner === true){
-		//console.log("ggggggggggggggggggggggggggggggggggg");
-		marqueur.win = "Vous avez survécu ! <br/> <img src='./images/rat_paper.png'>";
+	if(lost === false){
+		if(winner === true){
+			//console.log("ggggggggggggggggggggggggggggggggggg");
+			marqueur.win = "Vous avez survécu ! <br/> <a href='http://localhost:5000/req_facile?pseudo=" + query.pseudo + "&boutons='>Rejouer?</a> <br/> <img src='./images/rat_paper.png'>";
+		}
 	}
-
 	marqueur.cptb = fun_cptb(grille, 8);
 	page = page.supplant(marqueur);
-	
+
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	res.write(page);
 	res.end();
