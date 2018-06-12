@@ -2,7 +2,7 @@
 
 "use strict";
 
-var fun_aff = function (pseudo, grille) {
+var fun_aff = function (pseudo, grille,size) {
 
 	var marqueur;
 	var x;
@@ -12,8 +12,8 @@ var fun_aff = function (pseudo, grille) {
 	marqueur.erreur = "";
 	marqueur.pseudo = pseudo;
 	marqueur.lagrille = "";
-	for (x = 0;x < 8; x++) {
-		for (y = 0; y < 8; y++) {
+	for (x = 0;x < size; x++) {
+		for (y = 0; y < size; y++) {
 			if(grille.cells[x][y].d === true) {
 				marqueur.lagrille += "<input type='image' src='./images/flag.png' name= 'case." + x + "." + y + "' >\n";
 			} else if (grille.cells[x][y].show === false) {

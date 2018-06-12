@@ -29,7 +29,7 @@ var trait = function (req, res, query) {
 	grille = JSON.parse(repJSON);
 
 	if (query.act === "disc") {
-		lost = click(grille, pos.l, pos.c, 8);
+		lost = click(grille, pos.l, pos.c, 6);
 
 	} else if (query.act === "flag") {
 		if (grille.cells[pos.l][pos.c].d === true) {
@@ -45,16 +45,16 @@ var trait = function (req, res, query) {
 	repJSON = JSON.stringify(grille);
 	fs.writeFileSync("./modules/grille_" + query.pseudo + ".json", repJSON, "UTF-8");
 
-	winner = win(grille, 8);
+	winner = win(grille, 6);
 
 	// AFFICHAGE DE LA PAGE DU JEU AVEC CHANGEMENT AU NIVEAU FACILE
 
 	page = fs.readFileSync('./level_facile.html', 'utf-8');
 
-	marqueur = fun_aff( query.pseudo, grille);
+	marqueur = fun_aff( query.pseudo, grille, 6);
 	marqueur.lose = "";
 	if(lost === true){
-		marqueur.lose = "Vous avez perdu !";
+		marqueur.lose = "Vous avez perdu ! <br/> <a href='http://localhost:5000/req_facile?pseudo=" + query.pseudo + "&boutons='> Rejouer?</a> ";
 	}
 
 	marqueur.win = "";
@@ -64,7 +64,7 @@ var trait = function (req, res, query) {
 			marqueur.win = "Vous avez survécu ! <br/> <a href='http://localhost:5000/req_facile?pseudo=" + query.pseudo + "&boutons='>Rejouer?</a> <br/> <img src='./images/rat_paper.png'>";
 		}
 	}
-	marqueur.cptb = fun_cptb(grille, 8);
+	marqueur.cptb = fun_cptb(grille, 6);
 	page = page.supplant(marqueur);
 
 	res.writeHead(200, {'Content-Type': 'text/html'});
