@@ -1,5 +1,4 @@
 "use strict";
-"use strict";
 
 var fs = require("fs");
 require('remedial');
@@ -19,19 +18,19 @@ var trait = function (req, res, query) {
 	var grille;
 	var fun_cptb = require("./modules/fun_cptb.js");
 
-	mod_grille(10,10,18, query.pseudo);
-	mod_value(10,10, query.pseudo);
+	mod_grille(11,11,18, query.pseudo);
+	mod_value(11,11, query.pseudo);
 
 
 	// AFFICHAGE NIVEAU INTER
     repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
 	grille = JSON.parse(repJSON);
 
-	page = fs.readFileSync("./level_facile.html","UTF-8");
-	marqueur = fun_aff(query.pseudo,grille);
+	page = fs.readFileSync("./level_inter.html","UTF-8");
+	marqueur = fun_aff(query.pseudo,grille,11);
 	marqueur.lose = "";
 	marqueur.win = "";
-	marqueur.cptb = fun_cptb(grille,10);
+	marqueur.cptb = fun_cptb(grille,11);
 	page = page.supplant(marqueur);
 
 	res.writeHead(200, {'Content-Type': 'text/html'});
