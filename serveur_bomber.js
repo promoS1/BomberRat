@@ -28,6 +28,7 @@ var req_erreur = require("./req_erreur.js");
 var req_statique = require("./req_statique.js");
 var req_jeufacile = require("./req_jeufacile.js");
 var req_retour = require("./req_retour.js");
+var req_creer_grille = require("./BackOffice/req_creer_grille.js");
 var req_jeuinter = require("./req_jeuinter.js");
 var req_jeuhard = require("./req_jeuhard.js");
 
@@ -90,6 +91,9 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_jeufacile':
 				req_jeufacile(req, res, query);
+				break;
+			case '/req_creer_grille':
+				req_creer_grille(req, res, query);
 				break;
 			default:
 				req_statique(req, res, pathname);
