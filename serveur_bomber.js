@@ -29,6 +29,9 @@ var req_statique = require("./req_statique.js");
 var req_jeufacile = require("./req_jeufacile.js");
 var req_retour = require("./req_retour.js");
 var req_creer_grille = require("./BackOffice/req_creer_grille.js");
+var req_jeuinter = require("./req_jeuinter.js");
+var req_jeuhard = require("./req_jeuhard.js");
+
 //-------------------------------------------------------------------------
 // FONCTION DE CALLBACK APPELLEE POUR CHAQUE REQUETE
 //-------------------------------------------------------------------------
@@ -70,9 +73,15 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_inter':
 				req_inter(req, res, query);
+				break
+			case '/req_jeuinter':
+				req_jeuinter(req, res, query);
 				break;
 			case '/req_hard':
 				req_hard(req, res, query);
+				break
+			case '/req_jeuhard':
+				req_jeuhard(req,res, query);
 				break;
 			case '/req_regle':
 				req_regle(req, res, query);
