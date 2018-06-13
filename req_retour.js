@@ -11,7 +11,8 @@ var page;
 var marqueur = {};
 
 	page = fs.readFileSync("modele_accueil_membre.html","utf-8");
-
+	
+	marqueur.chang_pseudo = "";
 	marqueur.pseudo = query.pseudo;
 	page = page.supplant(marqueur);
 

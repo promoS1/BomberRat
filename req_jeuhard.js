@@ -50,7 +50,7 @@ var trait = function (req, res, query) {
 
 	// AFFICHAGE DE LA PAGE DU JEU AVEC CHANGEMENT AU NIVEAU FACILE
 
-	page = fs.readFileSync('./level_inter.html', 'utf-8');
+	page = fs.readFileSync('./level_hard.html', 'utf-8');
 
 	marqueur = fun_aff( query.pseudo, grille, 16);
 	marqueur.lose = "";
