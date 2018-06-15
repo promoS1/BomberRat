@@ -54,14 +54,14 @@ var trait = function (req, res, query) {
 	marqueur = fun_aff( query.pseudo, grille, 11);
 	marqueur.lose = "";
 	if(lost === true){
-		marqueur.lose = "Vous avez perdu ! <br/> <a href='http://localhost:5000/req_facile?pseudo=" + query.pseudo + "&boutons='> Rejouer?</a> ";
+		marqueur.lose = "Vous avez perdu ! <br/> <a href='http://localhost:5000/req_inter?pseudo=" + query.pseudo + "&boutons='> Rejouer?</a> ";
 	}
 
 	marqueur.win = "";
 	if(lost === false){
 		if(winner === true){
 			//console.log("ggggggggggggggggggggggggggggggggggg");
-			marqueur.win = "Vous avez survécu ! <br/> <a href='http://localhost:5000/req_facile?pseudo=" + query.pseudo + "&boutons='>Rejouer?</a> <br/> <img src='./images/rat_paper.png'>";
+			marqueur.win = "Vous avez survécu ! <br/> <a href='http://localhost:5000/req_inter?pseudo=" + query.pseudo + "&boutons='>Rejouer?</a> <br/> <img src='./images/rat_paper.png'>";
 		}
 	}
 	marqueur.cptb = fun_cptb(grille, 11);

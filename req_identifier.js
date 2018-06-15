@@ -57,7 +57,6 @@ var trait = function (req, res, query) {
 		page = fs.readFileSync('modele_accueil_membre.html', 'UTF-8');
 
 		marqueurs = {};
-		marqueurs.chang_pseudo = "<a href='http://localhost:5000/req_changer_pseudo?pseudo=" + query.pseudo + "'>Changer de pseudo ?</a>"
 		marqueurs.pseudo = query.pseudo;
 		page = page.supplant(marqueurs);
 	}

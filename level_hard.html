@@ -13,19 +13,19 @@
 <input type="submit" name="bouton" value="retour">
 <input type="hidden" name="pseudo" value="{pseudo}">
 </form>
-<div id="marge">
+<div class="grille_pa3">
 <form action ="req_jeuhard" method = "GET">
-<p>
 <input type ="radio" name="act" value="disc" checked>Decouvrir une case!
 <input type ="radio" name="act" value="flag">Poser un drapeau!
-</p>
 <input type="hidden" name="pseudo" value="{pseudo}">
-{cptb} <img src="./images/bombe2.png"> restantes! 
-</br>
+
+</br></br> {cptb} <img src="./images/bombe2.png"> restantes! </br></br>
 {lagrille}
 </form>
-</div>
+
 {lose} 
 {win}
+</div>
+
 </body>
 </html>
