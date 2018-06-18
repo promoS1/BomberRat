@@ -91,11 +91,11 @@ var trait = function (req, res, query) {
 		if (trouve === true){
 		marqueurs.erreur = "ERREUR : ce compte existe déjà";
 		}else if (mdp === "different"){
-		marqueurs.erreur = "ERREUR : les mots de passe ne sont pas identique";
+		marqueurs.erreur = "ERREUR : les mots de passe ne sont pas identiques";
 		}else if (pseudo_valide === "non") {
 		marqueurs.erreur = "ERREUR : le champ pseudo est vide";
 		}else if (mdp_valide === "non") {
-		marqueurs.erreur = "ERREUR : le champ mot de pass est vide";
+		marqueurs.erreur = "ERREUR : le champ mot de passe est vide";
 		}
 		marqueurs.pseudo = query.pseudo;
 		page = page.supplant(marqueurs);
