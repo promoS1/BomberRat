@@ -54,6 +54,9 @@ var trait = function (req, res, query) {
 
 	marqueur = fun_aff( query.pseudo, grille, 16);
 	marqueur.lose = "";
+	
+	leader(winner,lost,query.pseudo);
+
 	if(lost === true){
 		marqueur.lose = "Vous avez perdu ! <br/> <a href='http://localhost:5000/req_hard?pseudo=" + query.pseudo + "&boutons='> Rejouer?</a> ";
 	}

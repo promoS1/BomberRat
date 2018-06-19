@@ -21,6 +21,9 @@ var trait = function (req, res, query) {
 	var fun_cptb = require("./modules/fun_cptb.js");
 	var win = require("./modules/fun_gagner.js");	
 	var winner;	
+	var leader = require("./modules/fun_leader.js");
+
+
 	pos = posi(query);
 	//	console.log(pos);
 	//	console.log(pos.l);
@@ -53,6 +56,9 @@ var trait = function (req, res, query) {
 
 	marqueur = fun_aff( query.pseudo, grille, 6);
 	marqueur.lose = "";
+  
+  	leader(winner,lost,query.pseudo);
+
 	if(lost === true){
 		marqueur.lose = "Vous avez perdu ! <br/> <a href='http://localhost:5000/req_facile?pseudo=" + query.pseudo + "&boutons='> Rejouer?</a> <img src='./images/art_mouse.png'>";
 	}
