@@ -30,7 +30,9 @@ src: url('visitor1.ttf')
 } #CI { 
 	font-family:'caviar';
 color : #000000;
-		font-size: 40px;
+		font-size: 25px;
+		margin-top: 140px;
+	
 }
 
 #barnabe {
@@ -49,18 +51,23 @@ color : #000000 ;
 src: url("_TOP_SECRET_.otf");
 }#acc { 
 	font-family:'secret';
-	font-size: 100px;
+	font-size: 55px;
+	padding-top: 235px;
 
 }
-#regle 
-{
-height: -60px;
-		margin-top: -40px;
+#david {
+	padding-top: 45px;
 }
-#titre
-{
-	margin-top: -50px;
+
+#regle {
+	height: -60px;
+	margin-top: -40px;
+}
+
+#titre {
+	margin-top: -130px;
 } 
+
 .myButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;

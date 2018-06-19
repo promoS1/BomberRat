@@ -4,10 +4,7 @@
 <link rel="stylesheet" href="./css/style.css" />
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 <link rel="icon" type="image/png" href="favicon.png"/>
-<form action="req_retour" method="GET">
-<input type="submit" name="bouton" value="retour">
-<input type="hidden" name="pseudo" value="{pseudo}">
-</form>
+<a href="/req_retour?pseudo={pseudo}"><img src="./images/but_retour.png"/></a>
 </head>
 <center>
 <div id="titre">
@@ -19,14 +16,24 @@
 </div>
 </center>
 <body>
+<center>
 Le champ de mines est représenté par une grille.
-<br>Chaque case de la grille peut soit cacher une mine, soit cacher un chiffre, soit être vide.
-<br>Le but du jeu est de découvrir toutes les cases libres sans faire exploser les mines, c'est-à-dire sans cliquer sur les cases qui les dissimulent.
-<br> Si vous cliquez sur une case libre comportant au moins une mine dans l'une de ses cases avoisinantes, un chiffre apparaît, indiquant le nombre de mines dans les huits cases autour du chiffre.
-<br>Si en revanche toutes les cases adjacentes sont vides, une case vide est affichée et la même opération est répétée sur ces cases, et ce jusqu'à ce que la zone vide soit entièrement délimitée par des chiffres.
-<br>C'est en comparant les différentes informations récoltées, vous pouvez ainsi progresser dans le déminage du terrain.
+<br>Chaque case de la grille peut soit cacher une mine, soit cacher un chiffre,
+<br>soit être vide.
+<br>Le but du jeu est de découvrir toutes les cases libres sans faire exploser les mines,
+<br>c'est-à-dire sans cliquer sur les cases qui les dissimulent.
+<br>Si vous cliquez sur une case libre comportant au moins une mine dans l'une de ses cases avoisinantes,
+<br>un chiffre apparaît, indiquant le nombre de mines dans les huits cases autour du chiffre.
+<br>Si en revanche toutes les cases adjacentes sont vides,
+<br>une case vide est affichée et la même opération est répétée sur ces cases,
+<br>et ce jusqu'à ce que la zone vide soit entièrement délimitée par des chiffres.
+<br>C'est en comparant les différentes informations récoltées,
+<br>vous pouvez ainsi progresser dans le déminage du terrain.
 <br>Si vous vous trompez et cliquez sur une mine, vous perdez !
-<br>Vous pouvez signaler les cases contenant des mines présumées par un drapeau en effectuant un clique gauche en mode "Drapeau" mais ce n'est aucunement obligatoire. Attention toutefois à ne pas signaler une case saine par un drapeau, car cela vous induirait en erreur !
+<br>Vous pouvez signaler les cases contenant des mines présumées par un drapeau
+<br>en effectuant un clique gauche en mode "Drapeau" mais ce n'est aucunement obligatoire.
+<br>Attention toutefois à ne pas signaler une case saine par un drapeau,
+<br>car cela vous induirait en erreur !
 </center>
 </body>
 
