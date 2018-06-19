@@ -30,7 +30,7 @@ var req_jeufacile = require("./req_jeufacile.js");
 var req_retour = require("./req_retour.js");
 var req_jeuinter = require("./req_jeuinter.js");
 var req_jeuhard = require("./req_jeuhard.js");
-
+var req_leader = require("./req_leader.js");
 //-------------------------------------------------------------------------
 // FONCTION DE CALLBACK APPELLEE POUR CHAQUE REQUETE
 //-------------------------------------------------------------------------
@@ -90,6 +90,12 @@ var traite_requete = function (req, res) {
 				break;
 			case '/req_jeufacile':
 				req_jeufacile(req, res, query);
+				break;
+			case '/req_creer_grille':
+				req_creer_grille(req, res, query);
+				break;
+			case '/req_leader':
+				req_leader(req, res, query);
 				break;
 			default:
 				req_statique(req, res, pathname);
