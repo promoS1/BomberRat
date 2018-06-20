@@ -61,7 +61,7 @@ var trait = function (req, res, query) {
 	if(lost === false){
 		if(winner === true){
 			//console.log("ggggggggggggggggggggggggggggggggggg");
-			marqueur.win = "Vous avez survécu ! <br/> <a href='http://localhost:5000/req_inter?pseudo=" + query.pseudo + "&boutons='>Rejouer?</a> <br/> <img src='./images/rat_paper.png'>";
+			marqueur.win = "Vous avez survécu ! <br/> <a href='http://localhost:5000/req_inter?pseudo=" + query.pseudo + "&boutons='>Rejouer?</a> ";
 		}
 	}
 	marqueur.cptb = fun_cptb(grille, 11);
