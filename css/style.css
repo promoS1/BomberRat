@@ -4,7 +4,11 @@ body {
 	background-size:cover;
 	/* background-attachment: fixed; */
 	background-position:center top; 
-} .hua {
+} #mba {
+padding : 50px 20px ;
+
+}
+.hua {
 	margin-top: -100;
 width:100px;
 height:100px;
@@ -35,8 +39,9 @@ color : #000000;
 
 	margin-left: auto;
 	margin-right: auto;
-} h2 { 
-	padding-top: 137px;
+}
+h2 { 
+	padding-top: 10%;
 	font-family:'pixi';
 color : #000000 ;
 		font-size : 45px;
@@ -60,7 +65,7 @@ src: url("_TOP_SECRET_.otf");
 }
 
 #titre {
-	margin-top: -90px;
+	margin-top: -130px;
 } 
 
 .myButton {
@@ -101,7 +106,7 @@ background:-o-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
 background:-ms-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
 background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
 filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44c767', endColorstr='#5cbf2a',GradientType=0);
-	   background-color:#44c767;
+	   background-color:#000000;
 	   -moz-border-radius:6px;
 	   -webkit-border-radius:6px;
 	   border-radius:6px;
@@ -195,6 +200,5 @@ top:1px;
 .mattiaslechiant { 
     font-family:'pixi';
 	    font-size: 27px;
-} #lose {
 }
 
