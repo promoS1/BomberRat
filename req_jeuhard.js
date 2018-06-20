@@ -22,6 +22,8 @@ var trait = function (req, res, query) {
 	var fun_cptb = require("./modules/fun_cptb.js");
 	var win = require("./modules/fun_gagner.js");	
 	var winner;	
+	var leader = require("./modules/fun_leader.js");
+
 	pos = posi(query);
 	//	console.log(pos);
 	//	console.log(pos.l);
