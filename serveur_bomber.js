@@ -31,6 +31,8 @@ var req_retour = require("./req_retour.js");
 var req_jeuinter = require("./req_jeuinter.js");
 var req_jeuhard = require("./req_jeuhard.js");
 var req_leader = require("./req_leader.js");
+var req_changer_pseudo = require("./req_changer_pseudo.js");
+var valider_changement =  require("./valider_changement.js");
 //-------------------------------------------------------------------------
 // FONCTION DE CALLBACK APPELLEE POUR CHAQUE REQUETE
 //-------------------------------------------------------------------------
@@ -97,6 +99,13 @@ var traite_requete = function (req, res) {
 			case '/req_leader':
 				req_leader(req, res, query);
 				break;
+			case '/req_changer_pseudo' :
+				req_changer_pseudo(req, res, query);
+				break;
+			case '/valider_changement' : 
+				valider_changement(req, res, query);
+				break;
+
 			default:
 				req_statique(req, res, pathname);
 				break;
