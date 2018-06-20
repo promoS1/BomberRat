@@ -36,7 +36,19 @@ var trait = function (req, res, query) {
 	marqueur.pseudo = query.pseudo;
 	for(x = 0; x<10;x++) {
 		if(x < membres.length){
+			if(x === 0) {
+				marqueur.leaderboard += "<div style='font-size: 34px; color: red;';>" + (x+1) + "er = " + board[x].pseudo + " avec " + board[x].victoire + " victoires</div> </br> ";
+			}else if(x === 1) {
+				marqueur.leaderboard += "<div style='font-size: 31px;';>" + (x+1) + "er = " + board[x].pseudo + " avec " + board[x].victoire + " victoires</div> </br> ";
+			}else if(x === 2) {
+				marqueur.leaderboard += "<div style='font-size: 29px;';>" + (x+1) + "er = " + board[x].pseudo + " avec " + board[x].victoire + " victoires</div> </br> ";
+
+			
+			} else {
 			marqueur.leaderboard += (x+1) + "er = " + board[x].pseudo + " avec " + board[x].victoire + " victoires </br> ";
+
+			}
+
 		}
 	}
 	page = page.supplant(marqueur);
