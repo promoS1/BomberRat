@@ -14,6 +14,7 @@ var trait = function (req, res, query) {
 	var trouve;
 	var pseudo_valide;
 	var indexJoueur;
+	var pseudo;
 
 	// ON LIT LES COMPTES EXISTANTS
 
