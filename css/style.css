@@ -202,11 +202,15 @@ top:1px;
 	font-family:'pixi';
 	font-size: 27px;
 } #yannlegate {
-	margin-top:	250px;
+	margin-top:	325px;
 	font-family:'visitor';
-	    font-size: 30px;
-} #ssd {
-	margin-top:10px;
-	margin-left:10px;
-} 
+	    font-size: 35px;
+} #lose {
+	font-family:'visitor'
+        font-size: 15px;
+
+} #win {
+	font-family:'visitor'
+		font-size: 15px;
+}
 
