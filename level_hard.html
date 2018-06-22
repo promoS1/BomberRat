@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<a href="/req_retour?pseudo={pseudo}"><img src="./images/but_retour.png"/></a>
+<a href="/req_retour?pseudo={pseudo}"><img src="./images/but2_retour.png"/></a>
 <div class="grille_pa3">
 <form action ="req_jeuhard" method = "GET">
 <input type ="radio" name="act" value="disc" checked>Decouvrir une case!
@@ -20,8 +20,12 @@
 {lagrille}
 </form>
 
+<div class="lose">
 {lose} 
+</div>
+<div class="win">
 {win}
+</div>
 </div>
 
 </body>
