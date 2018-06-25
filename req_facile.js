@@ -18,7 +18,7 @@ var trait = function (req, res, query) {
 	var grille;
 	var fun_cptb = require("./modules/fun_cptb.js");
 
-	mod_grille(6,6,18, query.pseudo);
+	mod_grille(6,6,9, query.pseudo);
 	mod_value(6,6, query.pseudo);
 
 
