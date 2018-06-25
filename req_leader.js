@@ -39,13 +39,13 @@ var trait = function (req, res, query) {
 			if(x === 0) {
 				marqueur.leaderboard += "<div style='font-size: 34px; color: red;';>" + (x+1) + "er = " + board[x].pseudo + " avec " + board[x].victoire + " victoires</div> </br> ";
 			}else if(x === 1) {
-				marqueur.leaderboard += "<div style='font-size: 31px;';>" + (x+1) + "er = " + board[x].pseudo + " avec " + board[x].victoire + " victoires</div> </br> ";
+				marqueur.leaderboard += "<div style='font-size: 31px;';>" + (x+1) + "eme = " + board[x].pseudo + " avec " + board[x].victoire + " victoires</div> </br> ";
 			}else if(x === 2) {
-				marqueur.leaderboard += "<div style='font-size: 29px;';>" + (x+1) + "er = " + board[x].pseudo + " avec " + board[x].victoire + " victoires</div> </br> ";
+				marqueur.leaderboard += "<div style='font-size: 29px;';>" + (x+1) + "eme = " + board[x].pseudo + " avec " + board[x].victoire + " victoires</div> </br> ";
 
 			
 			} else {
-			marqueur.leaderboard += (x+1) + "er = " + board[x].pseudo + " avec " + board[x].victoire + " victoires </br> ";
+			marqueur.leaderboard += (x+1) + "eme = " + board[x].pseudo + " avec " + board[x].victoire + " victoires </br> ";
 
 			}
 
