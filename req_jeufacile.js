@@ -1,4 +1,8 @@
+// ACTIONS SUR LA GRILLE FACILE
+
 "use strict";
+
+// DECLARATION DES VARIABLES
 
 var fs = require("fs");
 require('remedial');
@@ -23,13 +27,14 @@ var trait = function (req, res, query) {
 	var winner;	
 	var leader = require("./modules/fun_leader.js");
 
-
 	pos = posi(query);
-	//	console.log(pos);
-	//	console.log(pos.l);
+	
+	// LECTURE DES FICHIERS
 
 	repJSON = fs.readFileSync("./modules/grille_" + query.pseudo + ".json", "UTF-8");
 	grille = JSON.parse(repJSON);
+
+	// MODE ACTION DECOUVERTE/DRAPEAU
 
 	if (query.act === "disc") {
 		lost = click(grille, pos.l, pos.c, 6);
@@ -40,10 +45,11 @@ var trait = function (req, res, query) {
 
 		} else { 
 			grille.cells[pos.l][pos.c].d = true;
-			console.log("drapo");
 		}
 
 	}
+	
+	// ECRITURE DANS LES FICHIERS
 
 	repJSON = JSON.stringify(grille);
 	fs.writeFileSync("./modules/grille_" + query.pseudo + ".json", repJSON, "UTF-8");
@@ -66,10 +72,10 @@ var trait = function (req, res, query) {
 	marqueur.win = "";
 	if(lost === false){
 		if(winner === true){
-			//console.log("ggggggggggggggggggggggggggggggggggg");
 			marqueur.win = "Vous avez survécu ! <br/> <a href='http://localhost:5000/req_facile?pseudo=" + query.pseudo + "&boutons='>Rejouer?</a> <img src='./images/art_mouse.png'>";
 		}
 	}
+	
 	marqueur.cptb = fun_cptb(grille, 6);
 	page = page.supplant(marqueur);
 
@@ -80,4 +86,3 @@ var trait = function (req, res, query) {
 //--------------------------------------------------------------------------
 
 module.exports = trait;
-
